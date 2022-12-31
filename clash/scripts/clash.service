@@ -103,9 +103,12 @@ start_clash() {
             echo -n $! > ${Clash_pid_file}
             ${scripts_dir}/clash.tool -l
             echo [`TZ=Asia/Shanghai date "+%H:%M:%S"`]"info: clash内核已启动." >> ${CFM_logs_file}
-            ${scripts_dir}/upSub.sh -s
-            echo "0 * * * * ${scripts_dir}/upSub.sh -s " >> ${Clash_run_path}/root \
-            && echo [`TZ=Asia/Shanghai date "+%H:%M:%S"`]"info: 自动更新套餐流量已开启." >> ${CFM_logs_file}
+            
+            if [ "${auto_upSub}" == "true" ]; then
+                ${scripts_dir}/upSub.sh -s
+                echo "${auto_upSub_cron} ${scripts_dir}/upSub.sh -s " >> ${Clash_run_path}/root \
+                && echo [`TZ=Asia/Shanghai date "+%H:%M:%S"`]"info: 自动更新套餐流量已开启." >> ${CFM_logs_file}
+            fi
         else
             echo [`TZ=Asia/Shanghai date "+%H:%M:%S"`]"info: Clash启动失败 配置错误 错误信息" >> ${CFM_logs_file}
             $(${Clash_bin_path} -d ${Clash_data_dir} -f ${Clash_config_file} -t  | grep error| awk -F 'msg=' '{print $2}'>> ${CFM_logs_file})
