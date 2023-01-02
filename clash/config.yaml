@@ -97,7 +97,7 @@ proxy-providers:
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
-      interval: 3600
+      interval: 300
             
 proxy-groups:
   - name: 🇨🇳国内直连
@@ -114,7 +114,7 @@ proxy-groups:
       - ✈️手动选择
       - ♻️自动选择
       - 🔯负载均衡
-      - 🛠故障转移
+      - ⚙️故障转移
       - 🌐全部节点
       - 🚀IEPL专线
       - 🚀中转线路
@@ -147,33 +147,22 @@ proxy-groups:
   - name: ♻️自动选择
     type: url-test
     url: https://i.ytimg.com/generate_204
-    interval: 3600
+    interval: 300
     use:
       - 💠机场
   - name: 🔯负载均衡
     type: load-balance
     strategy: consistent-hashing
     url: https://i.ytimg.com/generate_204
-    interval: 1800
+    interval: 300
     use:
       - 💠机场
-  - name: 🛠故障转移
+  - name: ⚙️故障转移
     type: fallback
     url: http://www.gstatic.com/generate_204
-    interval: 1800
-    proxies:
-      - 🌐全部节点
-      - 🚀IEPL专线
-      - 🚀中转线路
-      - 🚀智能优化线路
-      - 🇭🇰香港节点
-      - 🇺🇸美国节点
-      - 🇨🇳台湾节点
-      - 🇸🇬新加坡节点
-      - 🇯🇵日本节点
-      - 🇨🇦加拿大节点
-      - 🇷🇺俄罗斯节点
-      - 🇰🇷韩国节点
+    interval: 300
+    use:
+      - 💠机场
 
 #应用分流
   - name: 📱小米服务
@@ -184,7 +173,7 @@ proxy-groups:
       - ✈️手动选择
       - ♻️自动选择
       - 🔯负载均衡
-      - 🛠故障转移
+      - ⚙️故障转移
       - 🌐全部节点
       - 🚀IEPL专线
       - 🚀中转线路
@@ -205,7 +194,7 @@ proxy-groups:
       - ✈️手动选择
       - ♻️自动选择
       - 🔯负载均衡
-      - 🛠故障转移
+      - ⚙️故障转移
       - 🌐全部节点
       - 🚀IEPL专线
       - 🚀中转线路
@@ -226,7 +215,7 @@ proxy-groups:
       - ✈️手动选择
       - ♻️自动选择
       - 🔯负载均衡
-      - 🛠故障转移
+      - ⚙️故障转移
       - 🌐全部节点
       - 🚀IEPL专线
       - 🚀中转线路
@@ -247,7 +236,7 @@ proxy-groups:
       - ✈️手动选择
       - ♻️自动选择
       - 🔯负载均衡
-      - 🛠故障转移
+      - ⚙️故障转移
       - 🌐全部节点
       - 🚀IEPL专线
       - 🚀中转线路
@@ -268,7 +257,7 @@ proxy-groups:
       - ✈️手动选择
       - ♻️自动选择
       - 🔯负载均衡
-      - 🛠故障转移
+      - ⚙️故障转移
       - 🌐全部节点
       - 🚀IEPL专线
       - 🚀中转线路
@@ -289,7 +278,7 @@ proxy-groups:
       - ✈️手动选择
       - ♻️自动选择
       - 🔯负载均衡
-      - 🛠故障转移
+      - ⚙️故障转移
       - 🌐全部节点
       - 🚀IEPL专线
       - 🚀中转线路
@@ -310,7 +299,7 @@ proxy-groups:
       - ✈️手动选择
       - ♻️自动选择
       - 🔯负载均衡
-      - 🛠故障转移
+      - ⚙️故障转移
       - 🌐全部节点
       - 🚀IEPL专线
       - 🚀中转线路
@@ -331,7 +320,7 @@ proxy-groups:
       - ✈️手动选择
       - ♻️自动选择
       - 🔯负载均衡
-      - 🛠故障转移
+      - ⚙️故障转移
       - 🌐全部节点
       - 🚀IEPL专线
       - 🚀中转线路
@@ -352,7 +341,7 @@ proxy-groups:
       - ✈️手动选择
       - ♻️自动选择
       - 🔯负载均衡
-      - 🛠故障转移
+      - ⚙️故障转移
       - 🌐全部节点
       - 🚀IEPL专线
       - 🚀中转线路
@@ -365,7 +354,7 @@ proxy-groups:
       - 🇨🇦加拿大节点
       - 🇷🇺俄罗斯节点
       - 🇰🇷韩国节点
-  - name: 🕊Twitter
+  - name: 🐦Twitter
     type: select
     proxies:
       - DIRECT
@@ -373,7 +362,7 @@ proxy-groups:
       - ✈️手动选择
       - ♻️自动选择
       - 🔯负载均衡
-      - 🛠故障转移
+      - ⚙️故障转移
       - 🌐全部节点
       - 🚀IEPL专线
       - 🚀中转线路
@@ -394,7 +383,7 @@ proxy-groups:
       - ✈️手动选择
       - ♻️自动选择
       - 🔯负载均衡
-      - 🛠故障转移
+      - ⚙️故障转移
       - 🌐全部节点
       - 🚀IEPL专线
       - 🚀中转线路
@@ -415,7 +404,7 @@ proxy-groups:
       - ✈️手动选择
       - ♻️自动选择
       - 🔯负载均衡
-      - 🛠故障转移
+      - ⚙️故障转移
       - 🌐全部节点
       - 🚀IEPL专线
       - 🚀中转线路
@@ -507,10 +496,10 @@ rule-providers:
     type: file
     behavior: classical
     path: ./rule_providers/AppDirect.yaml
-  userDirect:
-    type: file
-    behavior: classical
-    path: ./rule_providers/userDirect.yaml
+#  userDirect:
+#    type: file
+#    behavior: classical
+#    path: ./rule_providers/userDirect.yaml
     #用户自定义直连，文件在data/clash/rule-provider/userdirect，需要的自己写入，格式参照备用里面的clash官方文档
   userProxy:
     type: file
@@ -522,7 +511,7 @@ rules:
   - RULE-SET,userProxy,🌐全部节点
   - RULE-SET,AppProxy,✈️手动选择
   - RULE-SET,AppDirect,🇨🇳国内直连
-  - RULE-SET,userDirect,🇨🇳国内直连
+#  - RULE-SET,userDirect,🇨🇳国内直连
 
   - AND,((NETWORK,UDP),(DST-PORT,123)),DIRECT
   - AND,((NETWORK,UDP),(OR,((GEOSITE,YOUTUBE),(GEOSITE,BILIBILI)))),REJECT
@@ -545,7 +534,7 @@ rules:
   - GEOSITE,microsoft,Ⓜ️微软服务
   - GEOSITE,mega,🎯MEGA
   - GEOSITE,pocketcasts,📻PocketCasts
-  - GEOSITE,twitter,🕊Twitter
+  - GEOSITE,twitter,🐦Twitter
   - GEOSITE,tiktok,📺TikTok
   - GEOSITE,category-porn,🔞学习资料
 
@@ -556,7 +545,7 @@ rules:
 # GEOIP 规则
   - GEOIP,telegram,📲Telegram
   - GEOIP,google,🔓Google
-  - GEOIP,twitter,🕊Twitter
+  - GEOIP,twitter,🐦Twitter
   - GEOIP,CN,🇨🇳国内直连
   - GEOIP,private,DIRECT,no-resolve
 
